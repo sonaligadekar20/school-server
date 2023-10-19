@@ -50,7 +50,7 @@ app.post('/student',(req, res) => {
         })
     }
 
-    const id = Math.floor(Math.random() * 1000) + 1;
+    const id = Math.floor(Math.random() * 100000) + 1;
 
     const newStudent = {
         id,
