@@ -19,6 +19,29 @@ app.get('/students', (req, res)=>{
     });
 });
 
+app.post('/student',(req, res) => {
+    const {name, age, mobile, email}= req.body;
+
+    const id = Math.floor(Math.random() * 100000) + 1;
+
+    const newStudent = {
+        id: id,
+        name: name,
+        age: age,
+        mobile: mobile,
+        email: email,
+    }
+
+    students.push(newStudent);
+
+    res.json({
+        success: true,
+        data: newStudent,
+        message: 'Successfully added new student',
+        
+    })
+})
+
 app.listen(PORT, () => {
     console.log('Server is running on port ${PORT}.')
 });
